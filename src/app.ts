@@ -7,8 +7,8 @@ const dataList = document.getElementById("data-list");
 
 const state = {
   currentPage: 1,
-   pageData: []
-}
+   pageData: [],
+};
 
 const disableBtn = (btn) => {
   btn.classList.add("disabled");
@@ -24,7 +24,7 @@ const setPageNavStatus = (pageNum) => {
   pageNum == 1 ? disableBtn(prevBtn) : enableBtn(prevBtn);
 }
 
-const getPrevData = ({currentPage, pageData}) => {
+const getPrevData = ({ currentPage, pageData }) => {
   if (currentPage <= 1) return;
   setCurrentPage(pageData, currentPage - 1);
 }
@@ -38,14 +38,14 @@ const changeState = (data) => {
   state.pageData = data.pageData;
 }
 
-const setCurrentPage = async ( items=[], pageNum=1 ) => {
+const setCurrentPage = async ( items = [], pageNum = 1 ) => {
   if (!items[pageNum]){
     await fetchData(pageNum);
-    items = state.pageData;
+    items = state.pageData[0];
   }
-   changeState({
+  changeState({
     pageData: items,
-    currentPage: pageNum
+    currentPage: pageNum,
   });
   renderDataToTable(items, pageNum);
   setPageNavStatus(pageNum);
@@ -91,7 +91,6 @@ const renderDataToTable = (list, pageNum) => {
 
 prevBtn?.addEventListener("click", () => getPrevData(state));
 nextBtn?.addEventListener("click", () => getNextData(state));
-
 
 const startApp = async () => {
   setCurrentPage();

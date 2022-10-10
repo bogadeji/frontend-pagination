@@ -69,7 +69,6 @@ tbody tr:nth-child(even) {
   pointer-events: all;
 }
 
-
 /* Prevent double borders */
 .btn-group button:not(:last-child) {
   border-right: none;
