@@ -12,7 +12,7 @@
 
 <body>
 
-    <table>
+    <table id="items">
         <caption>paginated random data of app users</caption>
         <thead>
             <tr>
@@ -21,42 +21,21 @@
                 <td>Age</td>
             </tr>
         </thead>
-        <tbody data-sink>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
+        <tbody data-sink id="data-list">
+           <tr>
+            <td colspan="3">Loading...</td>
+           </tr>
         </tbody>
     </table>
 
     <div class="btn-group">
-        <button data-prevbtn>Previous</button>
-        <button data-nextbtn>Next</button>
-        <label data-pageview></label>
+        <button data-prevbtn id="prev-btn">Previous</button>
+        <button data-nextbtn id="next-btn">Next</button>
+        <label data-pageview id="page-view"></label>
     </div>
 
     <script type="module" src="app.ts"></script>
+    <!-- <script type="module" src="app.js"></script> -->
 </body>
 
 </html>
