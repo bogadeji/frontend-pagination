@@ -1,4 +1,4 @@
-const baseUrl = 'https://randomapi.com/api/8csrgnjw?key=LEIX-GF3O-AG7I-6J84';
+const baseUrl = "https://randomapi.com/api/8csrgnjw?key=LEIX-GF3O-AG7I-6J84";
 
 const nextBtn = document.getElementById("next-btn");
 const prevBtn = document.getElementById("prev-btn");
@@ -69,16 +69,16 @@ const renderDataToTable = (list, pageNum) => {
   const items = list[pageNum];
 
   if (dataList != null) {
-    dataList.innerHTML = '';
+    dataList.innerHTML = "";
     items.forEach(item => {
-      const row = document.createElement('tr');
-      const noData = document.createElement('td');
+      const row = document.createElement("tr");
+      const noData = document.createElement("td");
       noData.innerHTML = item.row;
 
-      const genderData = document.createElement('td');
+      const genderData = document.createElement("td");
       genderData.innerHTML = item.gender;
 
-      const ageData = document.createElement('td');
+      const ageData = document.createElement("td");
       ageData.innerHTML = item.age;
 
       row.appendChild(noData);
@@ -87,15 +87,14 @@ const renderDataToTable = (list, pageNum) => {
       dataList.appendChild(row);
     })
   }
-
 }
 
-prevBtn?.addEventListener('click', () => getPrevData(state));
-nextBtn?.addEventListener('click', () => getNextData(state));
+prevBtn?.addEventListener("click", () => getPrevData(state));
+nextBtn?.addEventListener("click", () => getNextData(state));
 
 
 const startApp = async () => {
   setCurrentPage();
 };
 
-document.addEventListener('DOMContentLoaded', startApp);
+document.addEventListener("DOMContentLoaded", startApp);
