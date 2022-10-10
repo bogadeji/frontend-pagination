@@ -1,3 +1,7 @@
+
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/d849859b5e7e456a9064a4e08fda2f60)](https://www.codacy.com/gh/bogadeji/frontend-pagination/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=bogadeji/frontend-pagination&amp;utm_campaign=Badge_Grade)
+----
+
 # Frontend Assessment
 
 Build and deploy a very simple frontend app for paginated data, that does the following
