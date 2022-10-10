@@ -4,6 +4,7 @@ const nextBtn = document.getElementById("next-btn");
 const prevBtn = document.getElementById("prev-btn");
 const pageView = document.getElementById("page-view");
 const dataList = document.getElementById("data-list");
+const loaderContainer = document.querySelector('.loader-container');
 
 const state = {
   currentPage: 1,
@@ -14,6 +15,16 @@ const disableBtn = (btn) => {
   btn.classList.add("disabled");
   btn.setAttribute("disabled", true);
 }
+
+const showLoader = () => {
+  loaderContainer?.classList.remove("loader-container-hidden");
+}
+
+const hideLoader = () => {
+  loaderContainer?.classList.add("loader-container-hidden");
+  console.log('hide loader')
+}
+
 
 const enableBtn = (btn) => {
   btn.classList.remove("disabled");
@@ -30,6 +41,7 @@ const getPrevData = ({ currentPage, pageData }) => {
 }
 
 const getNextData = ({ currentPage, pageData }) => {
+  showLoader();
   setCurrentPage(pageData, currentPage + 1);
 }
 
@@ -47,8 +59,10 @@ const setCurrentPage = async ( items = [], pageNum = 1 ) => {
     pageData: items,
     currentPage: pageNum,
   });
+  
   renderDataToTable(items, pageNum);
   setPageNavStatus(pageNum);
+  hideLoader();
 }
 
 const fetchData = async (index) => {
@@ -72,6 +86,7 @@ const renderDataToTable = (list, pageNum) => {
     dataList.innerHTML = "";
     items.forEach(item => {
       const row = document.createElement("tr");
+      row.dataset["entryid"] = item.id;
       const noData = document.createElement("td");
       noData.innerHTML = item.row;
 

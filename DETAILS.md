@@ -26,8 +26,8 @@ A data object called **state** is created, to keep track of current page number,
 
 The Methods employed are in the application are as follows:
 
-  - **showLoadingUi :**  shows the loader while fetching page data.
-  - **hideLoadingUI:**  removes the loader from view once the data has been retrieved.
+  - **showLoader :**  shows the loader while fetching page data.
+  - **hideLoader:**  removes the loader from view once the data has been retrieved.
   - **disableBtn:** This method disables a button.
   - **enableBtn:** This method enables a disabled button
   - **setPageNavStatus:** This method takes in the **pageNum** input and determines if the btn needs to be disabled or enabled. According to the problem statement, the **Previous** button needs to be disabled on the page that shows the first set of data from the API.
