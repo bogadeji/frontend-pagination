@@ -1,6 +1,6 @@
 # FRONTEND PAGINATION IMPLEMENTATION
 
-### PROBLEM STATEMENT
+## PROBLEM STATEMENT
 
 Build and deploy a very simple frontend app for paginated data, that does the following
 
@@ -19,7 +19,7 @@ See full details and instructions (including an interesting paging caveat) in th
 
 A data object called **state** is created, to keep track of current page number, as well as the data returned from the API. Mutations to this object are carried out by a method **changeState**. The **state** object makes use of two properties:
 
--**currentaPage:** This keeps track of the present page number
+-**currentPage:** This keeps track of the present page number
 
 -**pageData:** This keeps track of the data returned from the API on every request sent.
 
@@ -27,15 +27,15 @@ A data object called **state** is created, to keep track of current page number,
 
 The Methods employed are in the application are as follows:
 
- - **showLoadingUi :**  shows the loader while fetching page data.
- 
- - **hideLoadingUI:**  removes the loader from view once the data has been retrieved.
- 
- - **disableBtn:** This method disables a button.
+- **showLoadingUi :**  shows the loader while fetching page data.
 
- - **enableBtn:** This method enables a disabled button
+- **hideLoadingUI:**  removes the loader from view once the data has been retrieved.
+ 
+- **disableBtn:** This method disables a button.
 
- - **setPageNavStatus:** This method takes in the **pageNum** input and determines if the btn needs to be disabled or enabled. According to the problem statement, the **Previous** button needs to be disabled on the page that shows the first set of data from the API.
+- **enableBtn:** This method enables a disabled button
+
+- **setPageNavStatus:** This method takes in the **pageNum** input and determines if the btn needs to be disabled or enabled. According to the problem statement, the **Previous** button needs to be disabled on the page that shows the first set of data from the API.
 
 - **getPrevData:** This methods is called when the **Previous** button is clicked. It takes in the state object as an input parameter, and passes on the **pageData** property, as well as the value **currentPage - 1** to the **setCurrentPage** method
 
@@ -43,11 +43,11 @@ The Methods employed are in the application are as follows:
 
 -**changeState:**  This method enforces changes made to the state object. The method was created in order to have a single source of truth as regarding mutations to the state object data
 
- - **setCurrentPage:** This method takes in the **items** and **pageNum** inputs. It checks the list provided to confirm that the items required for the specified page are available, if not, if makes a call to the API using the **fetchData** method. Once the required items are confirmed available, it calls on the **renderDataToTable** method to display the table, as well as the **setPageNavStatus** method to determine if any buttons need to be disabled or enabled.
+- **setCurrentPage:** This method takes in the **items** and **pageNum** inputs. It checks the list provided to confirm that the items required for the specified page are available, if not, if makes a call to the API using the **fetchData** method. Once the required items are confirmed available, it calls on the **renderDataToTable** method to display the table, as well as the **setPageNavStatus** method to determine if any buttons need to be disabled or enabled.
 
- - **fetchData:** This method takes an input **index**, retrieves information from the **baseURL** using the index input and returns the list of items from the API.\
+- **fetchData:** This method takes an input **index**, retrieves information from the **baseURL** using the index input and returns the list of items from the API.\
 
- - **renderDataToTable:** This method takes in the list of items to render to the page, as well as the page number to render for. It then constructs the table rows and then inserts them into the DOM.
+- **renderDataToTable:** This method takes in the list of items to render to the page, as well as the page number to render for. It then constructs the table rows and then inserts them into the DOM.
  
 ### How Does This Work
 When the page is loaded, a request is sent to fetch the first set of data using index ***(N=1)***.
