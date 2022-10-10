@@ -78,7 +78,7 @@ const fetchData = async (index) => {
 }
 
 const renderDataToTable = (list, pageNum) => {
-  if (pageView != null) pageView.innerHTML = `Showing page ${pageNum}`;
+  if (pageView != null) pageView.innerHTML = `Showing Page ${pageNum}`;
 
   const items = list[pageNum];
 
