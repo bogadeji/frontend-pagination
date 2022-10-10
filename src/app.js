@@ -15,7 +15,6 @@
 //     if (!items[pageNum]) {
 //         items = await fetchData(pageNum);
 //     }
-    
 //     renderDataToTable(items, pageNum);
 //     setPageNavStatus(pageNum);
 //     console.log(currentPage)
