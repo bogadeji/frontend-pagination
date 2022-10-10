@@ -3,6 +3,7 @@
 ----
 
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/d849859b5e7e456a9064a4e08fda2f60)](https://www.codacy.com/gh/bogadeji/frontend-pagination/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=bogadeji/frontend-pagination&amp;utm_campaign=Badge_Grade)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/51ef48a8-e934-4ba1-bcb9-f8398b581da8/deploy-status)](https://app.netlify.com/sites/frontend-pagination/deploys)
 
 ----
 
